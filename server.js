@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 // Route to serve the resume PDF
-app.get('/resume', (req, res) => {
+app.get('/file', (req, res) => {
     const filePath = path.join(__dirname, 'file', 'Eugene Winata Resume.pdf');
     res.download(filePath, 'Eugene Winata Resume.pdf', (err) => {
         if (err) {
