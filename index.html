@@ -1,163 +1,170 @@
-<!-- <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eugene Winata - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        header p {
-            font-size: 1.2rem;
-            margin: 0.5rem 0 0;
-        }
-
-        nav {
-            background-color: #444;
-            text-align: center;
-            padding: 0.5rem 0;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
         .project-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .project-card h3 {
-            margin: 0.5rem 0;
-            font-size: 1.2rem;
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
         }
-
-        .project-card a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .project-card a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-        }
-
-        footer a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Eugene Winata</h1>
-        <p>Data Analyst | Data Scientist | Business Analyst</p>
-    </header>
+<body class="bg-gray-900 text-white">
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900 bg-opacity-80 backdrop-blur-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-red-500">Eugene Winata</h1>
+            <div class="space-x-8">
+                <a href="#home" class="hover:text-red-500 transition-colors">Home</a>
+                <a href="#about" class="hover:text-red-500 transition-colors">About</a>
+                <a href="#projects" class="hover:text-red-500 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-red-500 transition-colors">Contact</a>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio! I am Eugene Winata, a passionate professional with expertise in data analytics, machine learning, and business strategy. I specialize in leveraging data to drive insights, create predictive models, and deliver impactful business decisions.</p>
-        </section>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="text-center fade-in">
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">Eugene Winata</h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-6">
+                <span id="typed" class="text-red-500"></span>
+            </p>
+            <a href="#projects" class="inline-block bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-colors">Explore My Work</a>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <h3>NYC Taxi Demand Prediction</h3>
-                    <p>Time series prediction and regression analysis for taxi operations.</p>
-                    <a href="https://github.com/yourgithubusername/project1">View on GitHub</a>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+            <div class="fade-in max-w-3xl mx-auto text-center text-gray-300 text-lg">
+                <p>Welcome to my portfolio! I am Eugene Winata, a passionate professional with expertise in data analytics, machine learning, and business strategy. I specialize in leveraging data to drive insights, create predictive models, and deliver impactful business decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-12 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-3">NYC Taxi Demand Prediction</h3>
+                    <p class="text-gray-300 mb-4">Time series prediction and regression analysis for taxi operations.</p>
+                    <a href="https://github.com/yourusername/nyc-taxi" class="text-red-500 hover:underline">View on GitHub</a>
                 </div>
-                <div class="project-card">
-                    <h3>E-Commerce Market Analysis</h3>
-                    <p>Customer segmentation and payment insights from Brazilian e-commerce data.</p>
-                    <a href="https://github.com/yourgithubusername/project2">View on GitHub</a>
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-3">E-Commerce Market Analysis</h3>
+                    <p class="text-gray-300 mb-4">Customer segmentation and payment insights from Brazilian e-commerce data.</p>
+                    <a href="https://github.com/yourusername/ecommerce-analysis" class="text-red-500 hover:underline">View on GitHub</a>
                 </div>
-                <div class="project-card">
-                    <h3>Healthcare Risk Assessment</h3>
-                    <p>Web app for assessing disease risk and hospital-related insights.</p>
-                    <a href="https://github.com/yourgithubusername/project3">View on GitHub</a>
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-3">Healthcare Risk Assessment</h3>
+                    <p class="text-gray-300 mb-4">Web app for assessing disease risk and hospital-related insights.</p>
+                    <a href="https://github.com/yourusername/healthcare-app" class="text-red-500 hover:underline">View on GitHub</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me on <a href="https://github.com/yourgithubusername">GitHub</a> for collaborations or inquiries!</p>
-        </section>
-    </main>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8">Contact</h2>
+            <p class="text-gray-300 mb-6 fade-in text-lg">Feel free to reach out to me on GitHub for collaborations or inquiries!</p>
+            <a href="https://github.com/yourusername" class="inline-block bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-colors">GitHub Profile</a>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Eugene Winata | <a href="https://github.com/yourgithubusername">GitHub Profile</a></p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center text-gray-400">
+        <p>© 2025 Eugene Winata | <a href="https://github.com/yourusername" class="text-red-500 hover:underline">GitHub Profile</a></p>
     </footer>
+
+    <script>
+        // Initialize Typed.js for typing animation
+        new Typed('#typed', {
+            strings: ['Data Analyst', 'Data Scientist', 'Business Analyst'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true
+        });
+
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ef4444' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ef4444', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => observer.observe(element));
+    </script>
 </body>
 </html>
