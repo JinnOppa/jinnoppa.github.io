@@ -49,10 +49,8 @@
             <h1 class="text-2xl font-bold text-red-500">Eugene Winata</h1>
             <div class="space-x-8">
                 <a href="#home" class="hover:text-red-500 transition-colors">Home</a>
-                <a href="#about" class="hover:text-red-500 transition-colors">About</a>
-                <a href="#profile" class="hover:text-red-500 transition-colors">Profile</a>
+                <a href="/about" class="hover:text-red-500 transition-colors">About Me</a>
                 <a href="#projects" class="hover:text-red-500 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-red-500 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -64,58 +62,10 @@
             <p class="text-xl md:text-2xl text-gray-300 mb-6">
                 <span id="typed" class="text-red-500"></span>
             </p>
+            <div class="max-w-3xl mx-auto text-center text-gray-300 text-lg mb-8">
+                <p>I am a passionate Data Analyst and Data Scientist with expertise in transforming data into actionable insights, building predictive models, and driving impactful business decisions.</p>
+            </div>
             <a href="#projects" class="inline-block bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-colors">Explore My Work</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
-            <div class="fade-in max-w-3xl mx-auto text-center text-gray-300 text-lg">
-                <p>Welcome to my portfolio! I am Eugene Winata, a passionate professional with expertise in data analytics, machine learning, and business strategy. I specialize in leveraging data to drive insights, create predictive models, and deliver impactful business decisions.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Profile Section -->
-    <section id="profile" class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold mb-12 text-center">My Profile</h2>
-            <div class="fade-in grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-4">Professional Details</h3>
-                    <p class="text-gray-300 mb-4">I am a dedicated Data Analyst and Data Scientist with a strong background in statistical modeling, machine learning, and business intelligence. My work focuses on transforming raw data into actionable insights for organizations.</p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-lg font-medium text-red-500">LinkedIn</h4>
-                            <a href="https://linkedin.com/in/eugene-winata" class="text-gray-300 hover:text-red-500 transition-colors">linkedin.com/in/eugene-winata</a>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-medium text-red-500">Resume</h4>
-                            <a href="/file/Eugene Winata Resume.pdf" download class="inline-block bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition-colors">Download Resume (PDF)</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
-                    <p class="text-gray-300 mb-4">Feel free to reach out for professional inquiries or collaborations.</p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-lg font-medium text-red-500">Phone</h4>
-                            <p class="text-gray-300">+62 878 0878 3609</p>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-medium text-red-500">Email</h4>
-                            <p class="text-gray-300">eugene.winata@gmail.com</p>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-medium text-red-500">GitHub</h4>
-                            <a href="https://github.com/jinnoppa" class="text-gray-300 hover:text-red-500 transition-colors">github.com/jinnoppa</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -143,15 +93,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-8">Contact</h2>
-            <p class="text-gray-300 mb-6 fade-in text-lg">Feel free to reach out to me on GitHub for collaborations or inquiries!</p>
-            <a href="https://github.com/jinnoppa" class="inline-block bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-colors">GitHub Profile</a>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-gray-900 py-6 text-center text-gray-400">
         <p>© 2025 Eugene Winata | <a href="https://github.com/jinnoppa" class="text-red-500 hover:underline">GitHub Profile</a></p>
@@ -160,7 +101,7 @@
     <script>
         // Initialize Typed.js for typing animation
         new Typed('#typed', {
-            strings: ['Data Analyst','Data Engineer' , 'Data Scientist', 'Business Analyst'],
+            strings: ['Data Analyst', 'Data Scientist', 'Business Analyst'],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
@@ -186,7 +127,7 @@
             retina_detect: true
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links (only for # links)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

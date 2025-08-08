@@ -14,8 +14,13 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Route to serve the about page
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
 // Route to serve the resume PDF
-app.get('/file', (req, res) => {
+app.get('/resume', (req, res) => {
     const filePath = path.join(__dirname, 'file', 'Eugene Winata Resume.pdf');
     res.download(filePath, 'Eugene Winata Resume.pdf', (err) => {
         if (err) {
